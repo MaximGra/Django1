@@ -7,17 +7,19 @@
         <div class="header">
             <h1><a href="/books">Каталог</a></h1>
         </div>
+        
         <div class="row">
-            <div class="book col-md-4">
-                <h2>Сияние</h2>
-                <p>Автор: Стивен Кинг</p>
-                <p>Дата публикации: 2018-09-10</p>
-            </div>
-            <div class="book col-md-4">
-                <h2>1984</h2>
-                <p>Автор: Джордж Оруэл</p>
-                <p>Дата публикации: 2015-03-11</p>
-            </div>
+            {% for book in books %}
+               <div class="book col-md-4">
+                    <h2>{{ book.name }}</h2>
+                    <p>Автор: {{ book.author }}</p>
+                    <p>Дата публикации: <a href="/books/{{ book.pub_date }}">{{ book.pub_date }}</a></p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination d-flex flex-row">
+            {% if prev_page %} <div class="pag p-2"><a href="/books/{{ prev_page }}">&#60; {{ prev_page }} </a></div> {% endif %}
+            {% if next_page %} <div class="pag p-2"><a href="/books/{{ next_page }}">{{ next_page }} &#62;</a></div> {% endif %}
         </div>
     </div>
 {% endblock %}
