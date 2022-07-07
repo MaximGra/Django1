@@ -11,14 +11,14 @@ def client():
 # Курсы
 @pytest.fixture()
 def course_factory():
-    def factory(**kwargs):
-        return baker.make('Course', **kwargs)
+    def factory(*args, **kwargs):
+        return baker.make('Course',*args, **kwargs)
     return factory
 
 
 # Студенты
 @pytest.fixture()
 def student_factory():
-    def factory(**kwargs):
-        return baker.make('Student', **kwargs)
+    def factory(*args, **kwargs):
+        return baker.make('Student', *args, **kwargs)
     return factory
