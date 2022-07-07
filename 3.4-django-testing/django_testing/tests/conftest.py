@@ -4,7 +4,7 @@ from model_bakery import baker
 
 
 @pytest.fixture()
-def api_client():
+def client():
     return APIClient()
 
 
