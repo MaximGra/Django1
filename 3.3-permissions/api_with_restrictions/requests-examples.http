@@ -75,5 +75,5 @@ Content-Type: application/json
 
 # Удаление объявления
 DELETE {{baseUrl}}/advertisements/10/
-Сontent-Type: application/json
+
 Authorization: Token bbff5e7b27b5d0dac27dbf29a9fabe822653ac3b
